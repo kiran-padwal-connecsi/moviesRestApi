@@ -25,7 +25,7 @@ SECRET_KEY = '2cf-4%#8huf&#^u4j$talll*e&tp8e$7f1l%jy@0_t1ws9l69o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://kiranlocalbackup.pythonanywhere.com']
+ALLOWED_HOSTS = ['kiranlocalbackup.pythonanywhere.com']
 
 
 # Application definition
