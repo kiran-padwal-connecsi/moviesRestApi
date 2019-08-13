@@ -9,9 +9,8 @@ import datetime
 from movieApis.models import Movie,Comment
 from django.core import serializers
 from django.db.models import Count
-# def index(request):
-#     response = json.dumps([{}])
-#     return HttpResponse(response, content_type='text/json')
+
+
 
 @csrf_exempt
 def movies(request):

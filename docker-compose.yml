@@ -1,0 +1,13 @@
+version: "3"
+services:
+  python:
+    build:
+      context: .
+#    volumes:
+#      - ./netgururestApi /netguruRestApi
+    ports:
+      - 5000:8000
+#    volumes:
+#      - ./netguruRestApi:/djangoapp
+#      - ./movieApis:/movieApis
+#    command: "python manage.py runserver"
