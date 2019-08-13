@@ -1,4 +1,4 @@
-# moviesRestApi
+#moviesRestApi
 Restfull Api
 
 
@@ -7,7 +7,7 @@ a) Endpoints :
       2 GET /movies filters are optional and can be passed as query string
             for example /movies?genre=action
             GET /movies?movie_id=33
-      3 POST /comments to add comment to partivular movie id with payload = {"comment":"comment text","movie_id":"33"}
+      3 POST /comments to add comment to particular movie id with payload = {"comment":"comment text","movie_id":"33"}
         here both are required post values
       4 GET /comments returns a list of all the comments in the database
       5 GET /comments?movie_id=33 will return all the comments on movie id = 33
@@ -23,10 +23,13 @@ a) Endpoints :
         1. pip3 install django
         2. pip3 install requests
            python version : 3.6
+       a) python manage.py makemigrations
+       b) python manage.py migrate
+       c) python manage.py runserver
 
    c) App is  deployed on pythonanywhere.com :
       url : http://kiranlocalbackup.pythonanywhere.com/movies
 
-   d) basic tests of enpoints are done
+   d) basic tests of endpoints are done
 
    e) github public repository : https://github.com/kiran-padwal-connecsi/moviesRestApi.git
