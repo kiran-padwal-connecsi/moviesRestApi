@@ -6,6 +6,7 @@ import json
 # from django.http import JsonResponse
 # from django.shortcuts import get_object_or_404
 from django.db.models import Count
+from datetime import datetime
 
 class TestViews(TestCase):
 
@@ -94,7 +95,10 @@ class TestViews(TestCase):
         #assertion
         response = self.client.get(self.top_movies_url)
         self.assertEquals(response.status_code,200)
-        comment = Comment.objects.filter(date__range=['2019-08-11', '2019-08-12'])
+        today = datetime.now().date()
+        dt_string = today.strftime("%Y-%m-%d")
+        print(dt_string)
+        comment = Comment.objects.filter(date__range=['2019-08-11', dt_string])
         comment = comment.values('movie_id').annotate(total_comments=Count('movie_id'))
         comment = comment.order_by('-total_comments')
         data = list(comment)

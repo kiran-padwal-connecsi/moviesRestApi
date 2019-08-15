@@ -1,8 +1,22 @@
 #moviesRestApi
 Restfull Api
 
+1) Build with Docker-compose
+    a) command : docker-compose up --build
+    This will run the docker-compose.yml and install all dependencies and run the django server
+    I have windows 8 OS, so i have installed docker toolbox, in order to run my application on browser
+    i need to go on http://192.168.99.100:3000/movies to run the application on my browser
+    i am currently running Docker on a Linux VM
+    if you are running docker other than docker toolbox on linux vm then yours may be http://localhost:3000/movies
 
-a) Endpoints :
+2) Manual installation without docker :
+        a) pip3 install django
+        b) pip3 install requests
+           python version : 3.6
+        c) python manage.py runserver
+        d) on browser go on http:127.0.0.1:8000/movies
+
+3) Endpoints :
       1 POST /movies to add movie with payload = {"title":"ironman"}
       2 GET /movies filters are optional and can be passed as query string
             for example /movies?genre=action
@@ -16,20 +30,14 @@ a) Endpoints :
            required parameters are start_date & end_date
            eg: /top?start_date=2019-08-09&end_date=2019-08-10
 
+4) App is deployed on pythonanywhere.com :
+   a) url : http://kiranlocalbackup.pythonanywhere.com/movies
 
-  b) Install the dependencies mentioned in requirements.txt
-     build the Dockerfile to install all required dependencies
-     or else can be done manually :
-        1. pip3 install django
-        2. pip3 install requests
-           python version : 3.6
-       a) python manage.py makemigrations
-       b) python manage.py migrate
-       c) python manage.py runserver
+5) basic tests of endpoints are done
+   a) to run the test using docker-compose :
+      1) command : docker-compose build
+      2) command : docker-compose run web python manage.py test
+   b) to run the test without docker-compose:
+      1) python manage.py test
 
-   c) App is  deployed on pythonanywhere.com :
-      url : http://kiranlocalbackup.pythonanywhere.com/movies
-
-   d) basic tests of endpoints are done
-
-   e) github public repository : https://github.com/kiran-padwal-connecsi/moviesRestApi.git
+6) github public repository : https://github.com/kiran-padwal-connecsi/moviesRestApi.git
